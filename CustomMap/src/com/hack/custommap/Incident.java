@@ -2,15 +2,6 @@ package com.hack.custommap;
 
 public class Incident {
 
-	public Incident(String type, String description, String location,
-			String feedId, String googleHangout) {
-		super();
-		this.type = type;
-		this.description = description;
-		this.location = location;
-		this.feedId = feedId;
-		this.googleHangout = googleHangout;
-	}
 	public String getType() {
 		return type;
 	}
@@ -22,12 +13,6 @@ public class Incident {
 	}
 	public void setDescription(String description) {
 		this.description = description;
-	}
-	public String getLocation() {
-		return location;
-	}
-	public void setLocation(String location) {
-		this.location = location;
 	}
 	public String getFeedId() {
 		return feedId;
@@ -43,7 +28,30 @@ public class Incident {
 	}
 	String type;
 	String description;
-	String location;
+	public float getLongitude() {
+		return longitude;
+	}
+	public void setLongitude(float longitude) {
+		this.longitude = longitude;
+	}
+	public float getLatitude() {
+		return latitude;
+	}
+	public void setLatitude(float latitude) {
+		this.latitude = latitude;
+	}
+	public Incident(String type, String description, float longitude,
+			float latitude, String feedId, String googleHangout) {
+		super();
+		this.type = type;
+		this.description = description;
+		this.longitude = longitude;
+		this.latitude = latitude;
+		this.feedId = feedId;
+		this.googleHangout = googleHangout;
+	}
+	float longitude;
+	float latitude;
 	String feedId;
 	String googleHangout;
 	
