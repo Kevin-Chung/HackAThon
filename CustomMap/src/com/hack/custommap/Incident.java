@@ -1,4 +1,4 @@
-package com.hack.custommap;
+package com.example.geoloct;
 
 public class Incident {
 

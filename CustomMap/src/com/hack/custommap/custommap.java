@@ -12,12 +12,12 @@ import android.widget.Button;
 import android.widget.FrameLayout;
 import android.graphics.PorterDuff;
 
-public class CustomMapActivity extends Activity {
+public class custommap extends Activity {
 
 	FrameLayout frame;
 	ArrayList<Person> persons = new ArrayList<Person>();
 
-	CustomMapActivity activity = this;
+	custommap activity = this;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -50,39 +50,39 @@ public class CustomMapActivity extends Activity {
 		String name;
 		Context context;
 		Button button;
-		
+
 		int[] color ;
 		public Person(Context context) {
 			this.context = context;
-			
+
 			color = context.getResources().getIntArray(R.array.colors); // get Color array
-			
+
 			button = new Button(context);
 
 			frame.addView(button);
-			
+
 			button.setX(50f);
 			button.setY(50f);
 			ViewGroup.LayoutParams params = button.getLayoutParams();
 			params.height = 50;
 			params.width = 50;
 			button.setLayoutParams(params);
-			
+
 			button.getBackground().setColorFilter(color[0], PorterDuff.Mode.MULTIPLY);
-			
+
 		}
 
 		public void setEnemy()
 		{	
 			button.getBackground().setColorFilter(color[1], PorterDuff.Mode.MULTIPLY);
 		}
-		
+
 		public void setFriendly()
 		{	
 			button.getBackground().setColorFilter(color[2], PorterDuff.Mode.MULTIPLY);
 		}
-		
-		
+
+
 		public Button getbutton() {
 			return button;
 		}
